@@ -1,6 +1,8 @@
 # exercise 1.5.1
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+from scipy.linalg import svd
 
 # Load the Iris csv data using the Pandas library
 filename = '../Data/heart_failure.csv'
@@ -29,9 +31,6 @@ N, M = X.shape
 # deviation to obtain a standardized dataset:
 Y = X - np.ones((N, 1))*X.mean(0)
 Y = Y*(1/np.std(Y,0))
-
-import matplotlib.pyplot as plt
-from scipy.linalg import svd
 
 # PCA by computing SVD of Y
 U,S,V = svd(Y,full_matrices=False)
