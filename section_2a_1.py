@@ -12,7 +12,7 @@ import pandas as pd
 filename = '../Data/heart_failure.csv'
 df = pd.read_csv(filename)
 raw_data = df.values  
-cols = 0,2,4,6,8,11 
+cols = 0,3,4,6,8,12 
 Xnostd = raw_data[:, cols]
 y=df['serum_creatinine'].values
 N, M = Xnostd.shape
